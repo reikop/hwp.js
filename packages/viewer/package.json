@@ -12,7 +12,7 @@
   },
   "devDependencies": {
     "@hwp.js/parser": "workspace:packages/parser",
-    "cfb": "^1.2.0"
+    "cfb": "^1.2.2"
   },
   "peerDependencies": {
     "@hwp.js/parser": "^0.0.3"

@@ -245,13 +245,15 @@ class HWPViewer {
 
     if (isPicture(control)) {
       const image = this.hwpDocument.info.binData[control.info!.binID]
-      const blob = new Blob([image.payload], { type: `images/${image.extension}` })
-      // TODO: (@hahnlee) revokeObjectURL을 관리할 수 있도록 하기
-      const imageURL = window.URL.createObjectURL(blob)
-      shapeGroup.style.backgroundImage = `url("${imageURL}")`
-      shapeGroup.style.backgroundRepeat = 'no-repeat'
-      shapeGroup.style.backgroundPosition = 'center'
-      shapeGroup.style.backgroundSize = 'contain'
+      if(image){
+        const blob = new Blob([image.payload], { type: `images/${image.extension}` })
+        // TODO: (@hahnlee) revokeObjectURL을 관리할 수 있도록 하기
+        const imageURL = window.URL.createObjectURL(blob)
+        shapeGroup.style.backgroundImage = `url("${imageURL}")`
+        shapeGroup.style.backgroundRepeat = 'no-repeat'
+        shapeGroup.style.backgroundPosition = 'center'
+        shapeGroup.style.backgroundSize = 'contain'
+      }
     }
 
     control.content.forEach((paragraphList) => {

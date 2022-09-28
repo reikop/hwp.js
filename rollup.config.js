@@ -6,7 +6,7 @@ import babel from '@rollup/plugin-babel'
 import strip from '@rollup/plugin-strip'
 
 const rootDirectory = path.join(__dirname)
-const srcDirectory = path.join(rootDirectory, 'src')
+const srcDirectory = path.join(rootDirectory, 'packages')
 const buildDirectory = path.join(rootDirectory, 'build')
 
 const inputFile = path.join(srcDirectory, 'index.ts')
